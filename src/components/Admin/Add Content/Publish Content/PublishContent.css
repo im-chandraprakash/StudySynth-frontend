@@ -1,0 +1,132 @@
+.content-viewer {
+
+
+    /* Body styles */
+
+
+    /* Headings styles */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    /* Paragraph styles */
+    p {
+        margin-bottom: 15px;
+    }
+
+    /* Link styles */
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    ul {
+        list-style: disc;
+        padding-left: 1rem;
+    }
+
+    ol {
+        list-style: decimal;
+        padding-left: 1.5rem;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Images */
+    img {
+        max-width: 100%;
+        height: auto;
+        /* Maintain aspect ratio */
+        margin-bottom: 1rem;
+    }
+
+    a {
+
+        text-decoration: none;
+    }
+
+
+    /* Buttons */
+    button {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+
+        cursor: pointer;
+        /* Indicate clickable */
+        margin-top: 1rem;
+    }
+
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 8px;
+
+    }
+
+    code {
+        font-family: Consolas, monospace;
+
+        padding: 2px 4px;
+        border-radius: 4px;
+    }
+
+    /* Preformatted text styles */
+    pre {
+        font-family: Consolas, monospace;
+        /* Background-color and color not specified */
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+    }
+
+    /* Form styles */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+        /* Background-color and color not specified */
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
