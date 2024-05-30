@@ -21,7 +21,7 @@ function RenderArticle() {
 
     useEffect(() => {
         fetchData();
-        console.log(contentData, "is here");
+        // console.log(contentData, "is here");
     }, [contentId]);
 
     return (
