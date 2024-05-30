@@ -24,9 +24,7 @@ function Login() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-
         console.log("Hello i'm here ", formData);
-
         const result = await loginAPI(formData, dispatch, navigate);
         console.log("result is : ", result);
     }
@@ -70,13 +68,14 @@ function Login() {
                             <input type="submit" className="button" />
                         </div>
 
-                        <div>
-                            <Link to={"/signup"}>Go to Signup</Link>
+                        <div className="flex items-center gap-2 text-[17px]">
+                            <p>Don't have account ?</p>
+                            <Link to={"/signup"}  className=" font-semibold text-colorDarkPurple">Go to Signup</Link>
                         </div>
                     </form>
                 </div>
 
-                <div className="flex-[0.8]">
+                <div className="flex-[0.7]">
                     <div>
                         <img src={loginImage} alt="Login Image" />
                     </div>

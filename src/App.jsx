@@ -2,7 +2,6 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import OtpVarification from "./pages/OtpVarification";
 import Home from "./pages/Home";
 import Navbar from "./components/common/Navbar";
 import MyProfile from "./components/core/Dashboard/MyProfile";
@@ -16,11 +15,10 @@ import AddSyllabus from "./components/Admin/Pages/AddSyllabus.jsx";
 import Footer from "./components/common/Footer.jsx";
 import Articles from "./components/core/Dashboard/Articles.jsx";
 import WriteArticle from "./components/core/Dashboard/WriteArticle.jsx";
-import ShowContents from "./components/Admin/Add Content/ShowContents.jsx";
-import ViewContents from "./components/Admin/Add Content/ViewContents.jsx";
 import ArticleBoard from "./pages/ArticleBoard.jsx";
 import RenderArticle from "./components/core/Article/RenderArticle.jsx";
 import ViewBranch from "./pages/ViewBranch.jsx";
+import VerifyEmail from "./pages/VerifyEmail.jsx";
 
 function App() {
     return (
@@ -36,8 +34,8 @@ function App() {
                         element={<ViewBranch />}
                     />
                     <Route
-                        path="/otp-varification"
-                        element={<OtpVarification />}
+                        path="/verify-email"
+                        element={<VerifyEmail />}
                     />
 
                     <Route element={<AdminLogin />}>
@@ -63,14 +61,6 @@ function App() {
                                 element={
                                     <h1>Hello there this is quiz section</h1>
                                 }
-                            />
-                            <Route
-                                path="admin/articles"
-                                element={<ShowContents />}
-                            />
-                            <Route
-                                path="admin/view-contents"
-                                element={<ViewContents />}
                             />
                         </Route>
                     </Route>

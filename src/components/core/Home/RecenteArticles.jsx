@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {fetchRecentArticles} from '../../../services/operations/contentAPI'
 
 function RecenteArticles() {
     const [articles, setArticles] = useState(null);

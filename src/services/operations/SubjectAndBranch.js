@@ -1,8 +1,10 @@
 import { apiConnector } from "../axiosClient";
-import { contentEndpoints } from "../apis";
+import { subjectAndBranchEndpoint, adminEndpoints } from "../apis";
 
-const { GET_ALLSUBJECT_API, GET_INFO_ABOUT_SUBJECT, FETCH_ALL_ABOUT_BRANCH } =
-    contentEndpoints;
+const { GET_INFO_ABOUT_SUBJECT, FETCH_ALL_ABOUT_BRANCH } =
+    subjectAndBranchEndpoint;
+
+const { GET_ALLSUBJECT_API } = adminEndpoints;
 export async function fetchAllSubjectsAPI() {
     try {
         const response = await apiConnector("GET", GET_ALLSUBJECT_API);

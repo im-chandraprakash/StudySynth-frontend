@@ -1,6 +1,6 @@
-.content-viewer {
+.content-viewer {   
 
-
+ 
     /* Body styles */
 
 
@@ -29,6 +29,7 @@
     /* Paragraph styles */
     p {
         margin-bottom: 15px;
+        line-height: 1.4;
     }
 
     /* Link styles */

@@ -2,37 +2,29 @@ import React, { useState } from "react";
 import "./PublishContent.css";
 import { useDispatch, useSelector } from "react-redux";
 import { createContentAPI } from "../../../../services/operations/adminAPI";
-import { resetContentState } from "../../../../reducers/slices/contentSlice";
+import {
+    resetContentState,
+    setEditCourse,
+    setStep,
+} from "../../../../reducers/slices/contentSlice";
 
 function PublishContent() {
-    
     const { content } = useSelector((state) => state.content);
     const [isChecked, setIsChecked] = useState(false);
     const dispatch = useDispatch();
 
     const formData = useSelector((state) => state?.content?.contentInfo);
 
+    const goToBack = async () => {
+        dispatch(setStep(2));
+        dispatch(setEditCourse(true));
+    };
     const handlePublish = async () => {
         if (isChecked) {
+
             formData.append("content", content);
             formData.append("contentType", "Topic");
 
-            const getAccuracy = JSON.parse(localStorage.getItem("accuracy"));
-
-            let accu = "";
-            if (!getAccuracy) {
-                accu = "73%";
-                formData.append("accuracy", accu);
-                localStorage.removeItem("accuracy");
-                localStorage.setItem("accuracy", JSON.stringify(true));
-            } else {
-                accu = "15%";
-                formData.append("accuracy", accu);
-                localStorage.removeItem("accuracy");
-                localStorage.setItem("accuracy", JSON.stringify(false));
-            }
-
-            console.log("Testing accuracy is : ", accu);
             const result = await createContentAPI(formData);
 
             if (result) {
@@ -66,9 +58,15 @@ function PublishContent() {
                     </div>
                 </div>
 
-                <button className="button" onClick={handlePublish}>
-                    Submit
-                </button>
+                <div>
+                    <button className="button" onClick={handlePublish}>
+                        Submit
+                    </button>
+
+                    <button className="button" onClick={goToBack}>
+                        Back
+                    </button>
+                </div>
             </div>
         </div>
     );

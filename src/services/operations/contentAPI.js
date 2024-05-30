@@ -1,8 +1,16 @@
 import toast from "react-hot-toast";
-import { contentEndpoints } from "../apis";
+import {  adminEndpoints ,  contentEndpoints } from "../apis";
 
-const { GET_ALLBRANCH_API, SHOW_CONTENTS_API, GET_SINGLE_ARTICLE } =
-    contentEndpoints;
+const {
+    GET_ALLBRANCH_API,
+    SHOW_CONTENTS_API,
+   
+} = adminEndpoints;
+
+const {
+    GET_SINGLE_ARTICLE,
+    GET_RECENT_ARTICLES,
+} = contentEndpoints;
 import { apiConnector } from "../axiosClient";
 
 export async function fetchAllBranchAPI() {
@@ -23,7 +31,7 @@ export async function fetchAllBranchAPI() {
 
 export async function fetchRecentArticles() {
     try {
-        // const response = await apiConnector("GET", )
+        const response = await apiConnector("GET", GET_RECENT_ARTICLES);
         const resData = response?.data;
 
         if (!resData.success) {

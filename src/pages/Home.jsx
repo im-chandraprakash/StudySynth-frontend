@@ -4,13 +4,11 @@ import Hero from "../components/core/Home/Hero";
 import Footer from "../components/common/Footer";
 import HomeCarousals from "../components/core/Home/HomeCarousals";
 import RecenteArticles from "../components/core/Home/RecenteArticles";
-import gemini from "../config/gemini";
+
 import SubjectSlider from "../components/core/Home/SubjectSlider";
 
 function Home() {
-    useEffect(() => {
-        gemini();
-    }, []);
+    
     return (
         <div>
             <div className="w-full h-[calc(100vh)] bg-colorDarkBlack relative">

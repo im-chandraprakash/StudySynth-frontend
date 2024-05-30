@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 
+import { FaUserLock } from "react-icons/fa";
+
 function AdminLogin() {
     const navigate = useNavigate();
 
@@ -13,19 +15,21 @@ function AdminLogin() {
 
         if (email == "sahuji@gmail.com" && password == "1234") {
             localStorage.setItem("admin", "this is admin");
-            navigate("/admin/uploadContent");
+            navigate("/admin/add-content");
         }
     }
 
     if (admin == null) {
         return (
-            <div className="w-screen h-screen text-white bg-colorDarkBlack">
+            <div className="w-screen h-screen text-white  ">
                 <div className="w-full h-full flex flex-col gap-y-10 justify-center items-center ">
-                    <div className="w-[30%] border-1 border-white p-10  rounded-md">
-                        <h1 className="text-2xl font-semibold text-center">
-                            {" "}
-                            Admin Login{" "}
-                        </h1>
+                    <div className="w-[30%] border border-1 border-white p-10  rounded-md bg-colorLightBlack">
+                        <div className="flex justify-center items-center  gap-2 text-3xl">
+                            <FaUserLock />
+                            <h1 className="text-2xl font-semibold text-center">
+                                Admin Login{" "}
+                            </h1>
+                        </div>
                         <form className="w-full" onSubmit={handleSubmit}>
                             <div className="w-full my-5 mt-8">
                                 <label htmlFor="email" className="label">
@@ -63,14 +67,6 @@ function AdminLogin() {
                                 />
                             </div>
                         </form>
-                    </div>
-
-                    <div>
-                        <Link className="link" to="admin/uploadContent">
-                            <div className="text-2xl underline text-colorDarkPurple">
-                                continue without login
-                            </div>
-                        </Link>
                     </div>
                 </div>
             </div>

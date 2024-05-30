@@ -1,12 +1,15 @@
-import { contentEndpoints } from "../apis";
+import { adminEndpoints , contentEndpoints } from "../apis";
 const {
     CREATE_BRANCH_API,
     CREATE_SUBJECT_API,
-    CREATE_CONTENT_API,
+   
     GET_ALLBRANCH_API,
     GET_FILTERED_SUBJECT,
+    CREATE_CONTENT_API,
     ADD_SYLLABUS_API,
-} = contentEndpoints;
+   
+} = adminEndpoints;
+
 import { apiConnector } from "../axiosClient";
 import { toast } from "react-hot-toast";
 

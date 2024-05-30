@@ -158,7 +158,7 @@ function AddSubject() {
                             <option value="fifth">fifth</option>
                             <option value="sixth">sixth</option>
                             <option value="seventh">seventh</option>
-                            <option value="eigth">eigth</option>
+                            <option value="eighth">eighth</option>
                         </select>
                     </div>
                 </form>

@@ -37,7 +37,7 @@ function WriteArticle() {
                     </div>
                 </div>
             ) : (
-                <Index />
+                ""
             )}
         </div>
     );

@@ -33,7 +33,6 @@ function ContentInformation() {
 
     const fetchData = async () => {
         const branchResult = await getAllBranchAPI();
-
         if (branchResult) {
             setSelectedBranch(branchResult[0].name);
             setBranchData(branchResult);
@@ -62,8 +61,6 @@ function ContentInformation() {
         if (e.key === "Enter" && inputYear.trim() != "") {
             setYearTags([...yearTags, inputYear.trim()]);
             setInputYear("");
-
-            // console.log("click 1");
         }
     }
 
@@ -75,6 +72,7 @@ function ContentInformation() {
     useEffect(() => {
         fetchData();
         if (editCourse) {
+            console.log("this is all info : ", contentInfo);
             if (contentInfo.title) {
                 setValue("title", contentInfo.title);
             }
@@ -86,6 +84,7 @@ function ContentInformation() {
             setValue("unitName", contentInfo.unitName);
         }
     }, []);
+
     useEffect(() => {
         fetchSemesterData();
     }, [selectedSemester]);
@@ -104,6 +103,16 @@ function ContentInformation() {
         formData.append("yearOfAppearance", yearTags);
         formData.append("isImp", data.isImp);
         formData.append("unitName", data.unitName);
+
+        // const formDataObject = {
+        //     branch: selectedBranch,
+        //     semester: selectedSemester,
+        //     subjectId: subjectID,
+        //     title: data.title,
+        //     yearOfAppearance: yearTags,
+        //     isImp: data.isImp,
+        //     unitName: data.unitName,
+        // };
 
         dispatch(setContentInfo(formData));
         dispatch(setStep(2));

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "./TextEditor.css";
@@ -8,37 +8,29 @@ import {
     setEditCourse,
     setStep,
 } from "../../../../reducers/slices/contentSlice";
-import { useDispatch } from "react-redux";
-
-const toolbarOptions = [
-    ["bold", "italic", "underline", "strike"],
-    ["blockquote", "code-block"],
-    ["link", "image", "formula"],
-    // [{ header: 1 }, { header: 2 }],
-    [{ header: [1, 2, 3, 4, 5, 6, false] }],
-    [{ list: "ordered" }, { list: "bullet" }, { list: "check" }],
-    [{ script: "sub" }, { script: "super" }],
-    [{ indent: "-1" }, { indent: "+1" }],
-    [{ direction: "rtl" }],
-    [{ size: ["small", false, "large", "huge"] }],
-    [{ color: [] }, { background: [] }],
-    [{ font: [] }],
-    [{ align: [] }],
-    ["clean"],
-];
+import { useDispatch, useSelector } from "react-redux";
+import textEditorConfig from "../../../../data/TextEditorConfig";
 
 function TextEditor() {
     const [value, setValue] = useState("");
+    const { editCourse, content } = useSelector((state) => state.content);
     const dispatch = useDispatch();
 
     const modules = {
-        toolbar: toolbarOptions,
+        toolbar: textEditorConfig,
     };
 
     function handleSubmit() {
         dispatch(setContent(value));
         dispatch(setStep(3));
     }
+
+    useEffect(() => {
+        if (editCourse) {
+            setValue(content);
+            dispatch(setEditCourse(false));
+        }
+    }, []);
 
     return (
         <div className="">

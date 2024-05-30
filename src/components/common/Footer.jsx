@@ -2,8 +2,8 @@ import React from "react";
 
 function Footer() {
     return (
-        <div className="  w-full bg-colorBlackBackground text-white my-24 py-14 text-[17px] overflow-hidden">
-            <div className="max-w-maxContent mx-auto flex flex-row w-full overflow-hidden">
+        <div className="  w-full bg-colorBlackBackground text-white my-24 py-14 text-[17px] overflow-hidden   border-t border-white">
+            <div className="max-w-maxContent mx-auto flex flex-row w-full overflow-hidden ">
                 <div className="flex ">
                     <div className="flex-1 gap-y-4">
                         <h2 className="text-[28px] font-semibold my-5">

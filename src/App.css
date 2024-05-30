@@ -22,17 +22,17 @@
 
     cursor:  pointer;
     border-radius: 5px;
-    padding-inline: 25px;
-    padding-block: 8px;
+    padding-inline: 20px;
+    padding-block: 6px;
     background-color: transparent;
     border: 1px solid white;
-    font-size: larger;
+    font-size: 19px;
     font-weight: 500;
 
 }
 
 .label{
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .input-box {
@@ -40,13 +40,13 @@
     border-radius: 4px;
     outline: none;
     padding-inline: 20px;
-    font-size: larger;
+    font-size: 19px;
     margin-top: 4px;
     padding-block: 10px;
     background-color: #06182b;
     border-bottom: 1px solid white;
 }
 
-.border-white {
+/* .border-white {
     border: 1px solid white;
-}
+} */

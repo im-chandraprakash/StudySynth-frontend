@@ -62,7 +62,7 @@ function Navbar() {
                     )}
                 </div>
 
-                <div>{token != null && <ProfileDropDown />}</div>
+                <div>{token != null && <ProfileDropDown setToken={token} />}</div>
             </div>
         </div>
     );

@@ -1,14 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import image from "../../../assets/User.png";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { VscDashboard, VscSignOut } from "react-icons/vsc";
+import { logout } from "../../../reducers/slices/authSlice";
+import { useDispatch } from "react-redux";
 function ProfileDropDown() {
     const [open, setOpen] = useState(false);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleLinkVisible = () => {
         setOpen(!open);
     };
+
+    
+
     return (
         <div className=" relative flex items-center justify-center cursor-pointer">
             <div
@@ -37,16 +44,17 @@ function ProfileDropDown() {
                         </div>
                     </Link>
 
-                    <div
+                    <button
                         className="z-50 border-t flex w-full items-center gap-x-1 py-[10px] px-[12px] text-sm text-richblack-100 cursor-pointer hover:bg-colorBlackBackground"
                         onClick={() => {
-                            setOpen(false);
-                            dispatch(logout(navigate));
+                            dispatch(logout());
+                            navigate("/");
+                            handleLinkVisible();
                         }}
                     >
                         <VscSignOut className="text-lg" />
                         Logout
-                    </div>
+                    </button>
                 </div>
             )}
         </div>

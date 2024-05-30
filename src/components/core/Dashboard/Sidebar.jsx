@@ -58,12 +58,6 @@ const data = [
         link: "/admin/quiz",
         panel: "admin",
     },
-    {
-        id: 10,
-        name: "Articles",
-        link: "/admin/articles",
-        panel: "admin",
-    },
 ];
 function Sidebar() {
     const location = useLocation();
